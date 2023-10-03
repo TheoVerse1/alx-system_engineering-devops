@@ -1,3 +1,2 @@
 #!/usr/bin/env ruby
-# Extract information using a regular expression
-puts ARGV[0].scan(/\[from:(.*?)\] \[to:(.*?)\] \[flags:(.*?)\]/).join(",")
+puts ARGV[0].scan(/(\+?\d{11}|-?[0|1]:-?[0|1]:-?[0|1]:-?[0|1]:-?[0|1])/).join(',')
