@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Start listening on localhost and the specified port
+
+PORT=98
+
+nc -l -p $PORT
