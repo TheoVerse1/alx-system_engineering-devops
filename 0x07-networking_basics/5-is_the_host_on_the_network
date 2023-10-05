@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Check if an IP address argument is provided
+if [ $# -ne 1 ];
+then
+	echo "Usage: $0 {IP_ADDRESS}"
+else
+	ip_address="$1"
+	echo "Pinging $ip_address 5 times..."
+	for _ in {1..5};
+	do
+		# Use ping command to send 1 packet to the specified IP address
+		# Redirect output to /dev/null to suppress unnecessary details
+		if ping -c 1 "$ip_address" >/dev/null 2>&1; then
+			echo "Ping successful."
+		else
+			echo "Ping failed."
+		fi
+	done
+fi
